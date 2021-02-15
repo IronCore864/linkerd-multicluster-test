@@ -17,19 +17,19 @@ data:
 
     server {
       listen 8080;
-      set $east "east";
-      set $west "west";
+      set $tiexin2 "tiexin2";
+      set $tiexin "tiexin";
 
       location / {
         proxy_pass http://podinfo:9898;
         proxy_http_version 1.1;
       }
-      location /east {
-        proxy_pass http://podinfo-$east:9898;
+      location /tiexin2 {
+        proxy_pass http://podinfo-$tiexin2:9898;
         proxy_http_version 1.1;
       }
-      location /west {
-        proxy_pass http://podinfo-$west:9898;
+      location /tiexin {
+        proxy_pass http://podinfo-$tiexin:9898;
         proxy_http_version 1.1;
       }
     }
